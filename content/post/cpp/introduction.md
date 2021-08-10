@@ -2,7 +2,7 @@
 title: "C++ - Old but gold"
 author: NguyenNghia-PAT
 description: C++11, C++14, C++17 - New syntax, new feature.
-date: 2021-07-29T17:22:45+07:00
+date: hieunghia-pat
 draft: false
 toc: true
 image: "images/cpp/header.jpg"

@@ -1,8 +1,8 @@
 ---
 title: "Modern C++ - Value categories"
-date: 2021-07-29T17:33:05+07:00
+date: 2021-07-29
 description: Value categories in modern C++
-author: NguyenNghia-PAT
+author: hieunghia-pat
 draft: false
 toc: true
 image: "images/cpp/header.jpg"

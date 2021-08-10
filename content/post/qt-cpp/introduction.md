@@ -1,11 +1,11 @@
 ---
 title: "Qt - Cross-platform Framework for C++ development"
 description: Qt tutorial for C++ development
-date: 2021-07-29T17:23:13+07:00
+date: 2021-08-07
 draft: false
 toc: true
 image: "images/qt-cpp/header.jpg"
-author: NguyenNghia-PAT
+author: hieunghia-pat
 tags: ["Qt", "C++"]
 categories: [Qt]
 ---
@@ -22,4 +22,4 @@ Qt được viết hoàn toàn bằng C++, tuy nhiên [The Qt Company](https://w
 *Note: [PyQt](https://riverbankcomputing.com/software/pyqt/intro) được phát triển bởi Phil Thompson - một kỹ sư phần mềm của công ty [The Riverbank Computing](https://riverbankcomputing.com/). Do các vấn đề về bản quyền, năm 2009, Nokia, công ty đang sở hữu Qt toolkit vào thời điểm đó, đã phát triển và cho ra đời [PySide](https://doc.qt.io/qtforpython/) và sau này được duy trì và phát triển bởi The Qt Company. Trên thực tế hai framework này khá là tương đồng với nhau và theo nhiều ý kiến đánh giá, PyQt và cả PySide tương tự nhau gần 99%. Do đó việc lựa chọn PyQt hay PySide không phải là vấn đề lớn. Trong blog này mình chỉ giới thiệu [PySide](/post/pyside-python/introduction) đến bạn đọc bởi nó chính chuyên hơn và được hỗ trợ bởi QtCreator - IDE chuyên cho việc phát triển phần mềm sử dụng Qt cũng do The Qt Company phát triển.*
 
 ## IDE
-The Qt Company khuyến khích sử dụng Qt Creator cho việc phát triển app bằng Qt do Qt Creator được tích hợp rất nhiều công cụ hỗ trợ cho việc viết code, bao gồm cả QT Designer để thiết kế layout. Tuy nhiên những bạn nào thích try hard với code có thể sử dụng các text editor phổ biến như VS Code, Sublime Text hay Vim để code, sau đó sử dụng [QMake]() để build project và [make]() để export executable file. Lựa chọn IDE là tùy vào gu của bạn đọc. Mình cũng sẽ có 1 [bài viết](/post/qt-cpp/vscode-for-qt) riêng về cách sử dụng text editor (cụ thể là VS Code) để xây dựng project bằng Qt.
+The Qt Company khuyến khích sử dụng Qt Creator cho việc phát triển app bằng Qt do Qt Creator được tích hợp rất nhiều công cụ hỗ trợ cho việc viết code, bao gồm cả QT Designer để thiết kế layout. Tuy nhiên những bạn nào thích try hard với code có thể sử dụng các text editor phổ biến như VS Code, Sublime Text hay Vim để code, sau đó sử dụng [QMake]() để build project và [make]() để export executable file. Lựa chọn IDE là tùy vào gu của bạn đọc. Mình cũng sẽ có 1 [bài viết](/post/qt-cpp/your-first-program) về cách sử dụng text editor (cụ thể là VS Code) để xây dựng project bằng Qt.

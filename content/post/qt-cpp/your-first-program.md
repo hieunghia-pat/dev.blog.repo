@@ -1,11 +1,11 @@
 ---
 title: "Your First Qt Program"
 description: Qt tutorial for C++ development
-date: 2021-07-29T17:23:13+07:00
+date: 2021-08-09
 draft: false
 toc: true
 image: "images/qt-cpp/header.jpg"
-author: NguyenNghia-PAT
+author: hieunghia-pat
 tags: ["Qt", "C++"]
 categories: [Qt]
 ---
@@ -34,7 +34,7 @@ Các thành phần đáng được chú ý trong file .pro:
  - **FORMS**: chứa đường dẫn đến các files ui (User Interface). Chi tiết xem thêm ở [đây](https://doc.qt.io/qt-5/qmake-variable-reference.html#forms).
 
 ### mainwindow.ui
-Khi sử dụng Qt Creator, việc thiết kế layout cho project có thể được thực hiện một cách đơn giản hơn thông qua Qt Designer. Đây là môi trường tương tự như [WinForm]() của Microsoft Visual Studio, thực hiện việc kéo thả để xây dựng giao diện. Qt quản lý thông tin giao diện được xây dựng bằng file .ui. Cấu trúc của file .ui tuân theo định dạng chuẩn [XML](), đây là chuẩn định dạng phổ biến cho các phương thức giao tiếp web (API) cũ, hiện nay vốn đã được thay thế thành các file định dạng [JSON](). Định dạng XML cũng được [Android Studio]() sử dụng để quản lý layout của chương trình.
+Khi sử dụng Qt Creator, việc thiết kế layout cho project có thể được thực hiện một cách đơn giản hơn thông qua Qt Designer. Đây là môi trường tương tự như [WinForm](https://en.wikipedia.org/wiki/Windows_Forms) của Microsoft Visual Studio, thực hiện việc kéo thả để xây dựng giao diện. Qt quản lý thông tin giao diện được xây dựng bằng file .ui. Cấu trúc của file .ui tuân theo định dạng chuẩn [XML](https://en.wikipedia.org/wiki/XML), đây là chuẩn định dạng phổ biến cho các phương thức giao tiếp web (API) cũ, hiện nay vốn đã được thay thế thành các file định dạng [JSON](https://www.json.org/json-en.html). Định dạng XML cũng được [Android Studio](https://developer.android.com/studio) sử dụng để quản lý layout của chương trình.
 
 Khi double click vào file *mainwindow.ui*, Qt Designer tự động được kích hoạt. Qt Creator không cho phép việc chỉnh sửa các file .ui thông qua Qt Editor. Việc chỉnh sửa này chỉ có thể thực hiện ở Qt Designer. Điều này giúp Qt đảm bảo cấu trúc của các file .ui là tối ưu cho việc interpret để tạo ra các UI components cho project.
 
@@ -193,3 +193,16 @@ Sau khi hoàn tất các thao tác trên, ở terminal, vào folder build và th
 
 Trong project này, do không sử dụng Qt Designer nên việc chỉnh layout không được thuận tiện, do đó mình thêm *Close* button và tạo thêm layout cho *window* để layout dễ nhìn hơn. *Click me* button cho kết quả hệt như mục trên và nút *Close* được thêm vào với chức năng tắt chương trình:
 ![](/images/qt-cpp/your-first-program/qt-10.png)
+
+## Appendix
+Có thể nhiều bạn sẽ thắc mắc về kết quả của câu lệnh `make` vừa thực hiện ở các mục trên. Trong phần phụ lục này mình sẽ giải thích sơ qua output của câu lệnh này.
+
+![](/images/qt-cpp/your-first-program/qt-8.png)
+
+Như hình trên là output của lệnh `make` ở lần thực thi đầu tiên ngay sau khi tạo project. Về cơ bản `make` là một công cụ hỗ trợ quá trình compile một project C++ trở nên đơn giản và dễ dàng hơn. Giả sử như khi một lập trình viên muốn try hard, muốn tự tay compile từng file source và file header trong project của mình, khi đó anh ta phải nhập câu lệnh như sau vào terminal:
+```
+g++ -std=c++17 -o out -I./include/ ./source/*.cpp
+```
+Trong đó -std là flag để khai báo chuẩn C++ được sử dụng, -I để khai báo các folder chứa các header files, -o xác định output file, các phần còn lại là các dynamic linked files(Shared Object(so) trên Linux-based OS hoặc Dynamic Linked Library(dll) trên Windows) và các source files.
+
+Đối với việc sử dụng một framework để xây dựng ứng dụng, rõ ràng việc compile tay như trên sẽ trở thành vấn đề khá khó chịu vì bên cạnh những header files và source files của bản thân lập trình viên tạo ra còn có các headers và sources của framework. Mà trong một framework các header files và các source files không được tổ chức và linked với nhau một cách đơn giản. Thậm chí chúng ta hoàn toàn không thể biết cần phải compiler những headers nào, link những source files nào để compile. Chỉ có bản thân những người phát triển framework mới nắm rõ được điều đó. Do vậy các nhà phát triển cho Qt đã xây dựng nên qmake. Công cụ này có nhiệm vụ xác định những module được sử dụng trong project thông qua biến `QT`, từ đó xác định đường dẫn đến các header files và các source files cần thiết để thêm vào *Makefile*. `make` sẽ dựa trên những thông tin trong Makefile này để tiến hành thực thi các câu lệnh g++ tương ứng với các đối số được configured sẵn để build project. Như ở hình trên ta có thể thấy số lượng các header files (.h) và các shared object files (.so) được sử dụng rất nhiều cho việc compile. Các file này được compile thành mã máy, sau đó liên kết lại với nhau để thành một file binary hoàn chỉnh và cuối cùng là tạo nên file executable để thực thi.

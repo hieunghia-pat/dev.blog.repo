@@ -1,8 +1,8 @@
 ---
 title: "Modern C++ - Auto and Range-based for loop"
-date: 2021-07-29T17:33:05+07:00
+date: 2021-07-29
 description: Auto keyword and Range-based for loop.
-author: NguyenNghia-PAT
+author: hieunghia-pat
 draft: false
 toc: true
 image: "images/cpp/header.jpg"
